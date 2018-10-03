@@ -1,0 +1,770 @@
+
+entities:
+
+- type_keys: [keyword]
+  names: [restart, resume, continue]
+
+- type_keys: [keyword]
+  names: [pediatric, pediatrics, children, child, kid]
+
+- type_keys: [keyword]
+  names: [allergic, allergy]
+
+- type_keys: [keyword]
+  names: [anaphylaxis, anaphylactic, anaphylactoid]
+
+- type_keys: [keyword]
+  names: [MRI, MR, magnetic resonance imaging, magnetic resonance]
+
+- type_keys: [keyword]
+  names: [pregnant, pregnancy]
+
+- type_keys: [keyword]
+  names: [patient, pt]
+
+- type_keys: [keyword]
+  names: [breastfeeding, breast feeding, breast-feeding]
+
+- type_keys: [keyword]
+  names: [premedication, pre-medication, pre medication]
+
+- type_keys: [keyword]
+  names: [unable, not able, cannot, can't]
+
+- type_keys: [keyword]
+  names: [intravenous, iv]
+
+- type_keys: [keyword]
+  names: [intravenous contrast media, iv contrast media, ivcm]
+
+- type_keys: [disease]
+  names: [edema, oedema]
+
+- type_keys: [disease]
+  names: [seizures, convulsions, seizure, convulsion]
+
+- type_keys: [disease]
+  names: [anxiety attack, panic attack]
+
+- type_keys: [drug name/class]
+  names: [gadolinium-based contrast agents, gadolinium based contrast agents, gbca, gbcas]
+
+- type_keys: [intent]
+  names: [treatment, treat]
+
+content:
+
+# 1.  Can we give MRI/gadolinium based contrast to a pregnant patient?
+
+- tags:
+  - [mri, gadolinium*, contrast, pregnant, patient*]
+  - [recommendations, ACR, MRI, contrast, pregnant, patient*]
+
+  title: Gadolinium-Based Contrast Agents in Pregnant Patients
+  text: |
+    To date, there have been no known adverse effects to human fetuses reported when clinically recommended dosages of
+    gadolinium-based contrast agents (GBCAs) have been given to pregnant women.  Because it is unclear how GBCAs will
+    affect the fetus, these agents should be administered with caution to pregnant or potentially pregnant patients.
+    GBCAs should only be used if their usage is considered critical and the potential benefits justify the potential
+    unknown risk to the fetus.
+
+    If a GBCA is to be used in a pregnant patient, one of the agents believed to be at low
+    risk for the development of NSF [12] should be used at the lowest possible dose to achieve diagnostic results.
+    In pregnant patients with severely impaired renal function, the same precautions should be observed as in non-pregnant patients.
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Breastfeeding - Iodinated Contrast, Breastfeeding - Gadolinium Contrast]
+
+#2.  How long does a breastfeeding mother have to wait before restarting breast feeding?
+
+- tags:
+  - [contrast, pregnant*, mother*, breastfeeding, restart*]
+
+  title: Restart breastfeeding after contrast administration
+  text: Sure Doc! Which type of contrast media are you looking for?
+  quick_options: [Breastfeeding - Iodinated Contrast, Breastfeeding - Gadolinium Contrast, Gadolinium-Based Contrast Agents in Pregnant Patients]
+
+- tags:
+  - [contrast, pregnant*, mother*, breastfeeding, restart*, iodinated]
+
+  title: Breastfeeding - Iodinated Contrast
+  text: |
+    Because of the very small percentage of iodinated contrast medium that is excreted into the breast milk and
+    absorbed by the infant’s gut, we believe that the available data suggest that it is safe for the mother and infant to
+    continue breast-feeding after receiving such an agent.
+
+    Ultimately, an informed decision to temporarily stop breast-feeding should be left up to the mother after these
+    facts are communicated. If the mother remains concerned about any potential ill effects to the infant, she may
+    abstain from breast-feeding from the time of contrast administration for a period of 12 to 24 hours. There is no
+    value to stop breast feeding beyond 24 hours. The mother should be told to express and discard breast milk
+    from both breasts during that period. In anticipation of this, she may wish to use a breast pump to obtain milk
+    before the contrast-enhanced study to feed the infant during the 24-hour period following the examination.
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Breastfeeding - Gadolinium Contrast, Gadolinium-Based Contrast Agents in Pregnant Patients]
+
+- tags:
+  - [contrast, pregnant*, mother*, breastfeeding, restart*, gadolinium]
+  - [contrast, pregnant*, mother*, breastfeeding, restart*, mr]
+
+  title: Breastfeeding - Gadolinium Contrast
+  text: |
+    Because of the very small percentage of gadolinium-based contrast medium that is excreted into the breast
+    milk and absorbed by the infant’s gut, we believe that the available data suggest that it is safe for the mother
+    and infant to continue breast-feeding after receiving such an agent [6].
+
+    Ultimately, an informed decision to temporarily stop breast-feeding should be left up to the mother after these
+    facts are communicated. If the mother remains concerned about any potential ill effects to the infant, she may
+    abstain from breast-feeding from the time of contrast administration for a period of 12 to 24 hours. There is no
+    value to stop breast feeding beyond 24 hours. The mother should be told to express and discard breast milk
+    form both breast after contrast administration until breast feeding resumes. In anticipation of this, she may
+    wish to use a breast pump to obtain milk before the contrast-enhanced study to feed the infant during the 24-
+    hour period following the examination.
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Breastfeeding - Iodinated Contrast, Gadolinium-Based Contrast Agents in Pregnant Patients]
+
+#3.  What is the premedication for contrast reaction/allergy?
+
+- tags:
+  - [premedication, contrast, media*, reaction]
+  - [premedication, contrast, media*, allergy]
+
+  title: Premedication for Contrast Reactions
+  text: |
+    Methylprednisolone 32 mg PO 12, 2 hrs prior
+    +/- Benadryl 50 mg PO 1 hr prior.
+    OR
+    Prednisone 50 mg PO 13, 7, 1 hours prior
+    +/- Benadryl 50 mg PO 1 hr prior.
+    OR
+    Hydrocortisone 200 mg IV 5 hrs and 1 hr prior
+    and Benadryl 50 mg IV 1 hr prior.
+    (urgent, NPO only, ER, inpatient)
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Contrast Extravasation, methylprednisolone, prednisone, hydrocortisone]
+
+- tags:
+  - [contrast, extravasation]
+
+  title: Contrast Extravasation
+  text: |
+    Elevate arm, cool compress, remove rings. Observe. Consider surgical consultation for
+    decreased perfusion, sensation, strength, active range of motion, or increasing pain.
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Premedication for Contrast Reactions]
+
+#4. Can you still use oral contrast if the patient has a history of anaphylactic reaction with IV contrast?
+
+- tags:
+  - [oral, contrast, history, allergy, reaction*, intravenous]
+  - [oral, contrast, history, anaphylaxis, intravenous]
+
+  title: Oral contrast usage in patients with history of anaphylactoid reactions
+  text: |
+    Because anaphylactoid reactions are not considered to be dose related and can occur
+    with less than 1 ml of intravenous (IV) contrast media, it is generally accepted that allergic-like reactions can
+    occur even from the small amounts of contrast medium absorbed from the gastrointestinal tract. Somewhat
+    surprisingly, there are only very rare reports of moderate or severe allergic-like reactions to orally or rectally
+    administered iodinated contrast media [51].
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: []
+
+
+#5.  What is the cutoff for creatinine when administering gadolinium/MR contrast?
+
+- tags:
+  - [cutoff*, creatinine, clearance*, gadolinium, contrast]
+  - [cutoff*, creatinine, clearance*, MRI, contrast]
+  - [egfr, gadolinium, contrast]
+
+  title: Creatinine cutoff for Gadolinium contrast
+  text: |
+    Based on current knowledge, it is estimated that patients with end-stage CKD (CKD5, eGFR <15 ml/min/1.73 m2) and
+    severe CKD (CKD4, eGFR 15-29 ml/min/1.73 m2) have a 1% to 7% chance of developing
+    NSF after one or more exposures to group 1 GBCAs with the strongest association with NSF [1-6,9].
+    However, most patients who developed NSF had end-stage kidney disease and were on dialysis at the time of
+    exposure. Moreover, among patients with severe CKD (CKD4) that developed NSF (approximately 3% of all
+    reported NSF cases), most had an eGFR closer to 15 ml/min/1.73 m2 than to 30 ml/min/1.73 m2. There has been
+    only one published case report of a patient with eGFR values above 30 ml/min/1.73 m2 [10].
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Creatinine cutoff for Iodinated contrast, calculate creatinine clearance]
+
+- tags:
+  - [cutoff*, creatinine, clearance*, iodinated, contrast]
+  - [egfr, iodinated, contrast]
+
+  title: Creatinine cutoff for Iodinated contrast
+  text: |
+    There is no agreed-upon threshold of serum creatinine elevation or eGFR declination beyond which the risk of
+    CIN is considered so great that intravascular iodinated contrast medium should never be administered. In fact,
+    since each contrast medium administration always implies a risk-benefit analysis for the patient, contrast
+    medium administration for all patients should always be taken in the clinical context, considering all risks,
+    benefits and alternatives.
+
+    In a 2006 survey of radiologists by Elicker et al [64], the cutoff value for serum creatinine beyond which
+    intravascular iodinated contrast medium would not be administered varied widely among radiology practices.
+    For patients with no risk factors other than elevated serum creatinine, 35% of respondents used
+    1.5 mg/dL, 27% used 1.7 mg/dL, and 31% used 2.0 mg/dL (mean, 1.78 mg/dL). Threshold values were
+    slightly lower in patients with diabetes mellitus (mean: 1.68 mg/dL).
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Creatinine cutoff for Gadolinium contrast, calculate creatinine clearance]
+
+#6.  What is the dose of iodinated contrast for children?
+
+- tags:
+  - [iodinated*, intravenous*, contrast, pediatric]
+
+  title: IV Contrast Media Usage in Pediatric Patients
+  text: |
+    There are limited data available on the use of i.v. contrast media for CT studies in the pediatric population.
+    The purpose of this study is to determine the practice patterns of i.v. contrast media usage for pediatric CT by
+    members of the Society for Pediatric Radiology (SPR).
+
+    RESULTS:
+    The response rate of 6% (88/1545) represented practice patterns of 26% (401/1545) of the SPR membership.
+    Most respondents thought the following clinical information was mandatory before i.v. contrast media administration:
+    allergy to i.v. contrast media (97%), renal insufficiency (97%), current metformin use (72%), significant allergies (61%),
+    diabetes (54%), and asthma (52%). Most administered i.v. contrast media through nonimplanted central venous catheters (78%),
+    implanted venous ports (78%), and peripherally inserted central catheters (72%).
+
+    The most common maximum i.v. contrast media injection rates were 5.0 mL/s or greater for a 16-gauge angiocatheter,
+    4.0 mL/s for an 18-gauge angiocatheter, 3.0 mL/s for a 20-gauge angiocatheter, and 2.0 mL/s for a 22-gauge angiocatheter.
+    For soft-tissue extravasation of i.v. contrast media, 95% elevate the affected extremity, 76% use ice, and 45% use heat.
+  source_title: PubMed
+  source_url: https://www.ncbi.nlm.nih.gov/pubmed/24660719
+  quick_options: [Dose of IV Iodinated Contrast in Pediatric Patients, Dose of IV Gadolinium-Based Contrast in Pediatric Patients]
+
+- tags:
+  - [dose, intravenous*, iodinated*, contrast, pediatric]
+
+  title: Dose of IV Iodinated Contrast in Pediatric Patients
+  text: |
+    2011 SCORCH member survey (66% response)
+    - Ioversol (52%)
+    - Iohexol (38%)
+    - Iodixanol (29%)
+    - Iopamidol (26%)
+    - Iopromide (5%)
+    - Dosing 2ml/kg (88%)
+    - Iodine concentration: 300-320 mg/l (81%)
+    - Iodine load to patient: range, 270-740 mg l/kg
+  source_title: Pediatr Radiol
+  source_url: https://www.pedrad.org/portals/5/events/2013/dillmancontrast.pdf
+  quick_options: [Dose of IV Gadolinium-Based Contrast in Pediatric Patients, IV Contrast Media Usage in Pediatric Patients]
+
+- tags:
+  - [dose, intravenous*, gadolinium, contrast, pediatric]
+  - [dose, intravenous*, MR, contrast, pediatric]
+
+  title: Dose of IV Gadolinium-Based Contrast in Pediatric Patients
+  text: |
+    2011 SCORCH member survey (66% response)
+    - Magnevist (88%)
+    - MultiHance (38%)
+    - ProHance (14%)
+    - OmniScan (10%)
+    - Eovist (10%)
+    - Ablavar (5%)
+    - OptiMARK (2%)
+    - Dosing: 0.1 mmol/kg most common
+  source_title: Pediatr Radiol
+  source_url: https://www.pedrad.org/portals/5/events/2013/dillmancontrast.pdf
+  quick_options: [Dose of IV Iodinated Contrast in Pediatric Patients, IV Contrast Media Usage in Pediatric Patients]
+
+#7. How do you treat a iodinated contrast reaction?  Severe, moderate, and mild?
+
+
+- tags:
+  - [treatment, iodinated*, contrast, media*, reaction]
+
+  title: Treatment of contrast reaction
+  text: |
+    Sure Doc! You can ask me for the treatment algorithm for mild, moderate and severe contrast reactions.
+    Are you looking to treat a mild, moderate or severe contrast reaction? Alternatively you can also ask me
+    about specific contrast reactions such as "hives", "diffuse erythema", "bronchospasm", "laryngeal edema", "hypotension", "hypertensive crisis", 'pulmonary edema", "seizures", "hypoglycemia",
+    or "anxiety".
+
+  quick_options:
+    - {display: Severe, reply: Treatment of Severe Contrast Reaction}
+    - {display: Moderate, reply: Treatment of Moderate Contrast Reaction}
+    - {display: Mild, reply: Treatment of Mild Contrast Reaction}
+
+
+- tags:
+  - [treatment, iodinated*, contrast, media*, reaction, mild]
+
+  title: Treatment of Mild Contrast Reaction
+  text: |
+    What sort of mild contrast reaction are you looking to treat? You can ask me about mild contrast reactions for "hives",
+    "bronchospasm" and "hypotension"
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options:
+    - {display: Hives, reply: Treatment of Mild Contrast Reaction - Hives}
+    - {display: Bronchospasm, reply: Treatment of Mild Contrast Reaction - Bronchospasm}
+    - {display: Hypotension, reply: Treatment of Mild Contrast Reaction - Hypotension}
+
+- tags:
+  - [treatment, iodinated*, contrast, media*, reaction, moderate]
+
+  title: Treatment of Moderate Contrast Reaction
+  text: |
+    What sort of mild contrast reaction are you looking to treat? You can ask me about mild contrast reactions for "hives",
+    "bronchospasm" and "hypotension"
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options:
+  - {display: Hives, reply: Treatment of Mild Contrast Reaction - Hives}
+  - {display: Bronchospasm, reply: Treatment of Mild Contrast Reaction - Bronchospasm}
+  - {display: Hypotension, reply: Treatment of Mild Contrast Reaction - Hypotension}
+
+
+
+
+# Hives Contrast Reaction
+
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hives]
+
+  title: Treatment of Contrast Reaction - Hives
+  text: Sure Doc! Are you looking to treat a mild, moderate or severe Hives contrast reaction?
+  quick_options: [Treatment of Mild Contrast Reaction - Hives, Treatment of Moderate Contrast Reaction - Hives, Treatment of Severe Contrast Reaction - Hives]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hives, mild]
+
+  title: Treatment of Mild Contrast Reaction - Hives
+  text: |
+    Mild Reaction (scattered and/or transient) - Hives
+    No treatment often needed; however, if symptomatic, can consider:
+    1. Diphenhydramine (Benadryl®) 25–50 mg PO
+    2. Fexofenadine (Allegra®) 180 mg PO
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Moderate Contrast Reaction - Hives]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hives, moderate]
+
+  title: Treatment of Moderate Contrast Reaction - Hives
+  text: |
+    Moderate Reaction (more numerous/bothersome) - Hives
+    1. Monitor vitals
+    2. Preserve IV access
+    3. Consider diphenhydramine (Benadryl®) 25–50 mg PO
+    OR
+    Consider Fexofenadine (Allegra®} 180 mg PO
+    OR
+    Consider diphenhydramine (Benadryl®) 25–50 mg IM or IV (administer IV dose slowly over 1–2 min)
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Mild Contrast Reaction - Hives, Treatment of Severe Contrast Reaction - Hives]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hives, severe]
+
+  title: Treatment of Severe Contrast Reaction - Hives
+  text: |
+    Severe Reaction (widespread and/or progressive) - Hives
+    1. Monitor vitals
+    2. Preserve IV access
+    3. Diphenhydramine (Benadryl®) 25–50 mg IM or IV (administer IV dose slowly over 1–2 min)
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Mild Contrast Reaction - Hives, Treatment of Moderate Contrast Reaction - Hives]
+
+
+# Diffuse Erythema Contrast Reaction
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, diffuse*, erythema]
+
+  title: Treatment of Contrast Reaction - Diffuse Erythema
+  text: Sure Doc! Are you looking to treat Normotensive Diffuse Erythema or Hypotensive Diffuse Erythema?
+  quick_options: [Treatment of Contrast Reaction - Normotensive Diffuse Erythema, Treatment of Contrast Reaction - Hypotensive Diffuse Erythema]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, diffuse*, erythema, normotensive]
+
+  title: Treatment of Contrast Reaction - Normotensive Diffuse Erythema
+  text: |
+    All forms
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+    Normotensive Diffuse Erythema: No other treatment usually needed
+
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Contrast Reaction - Hypotensive Diffuse Erythema]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, diffuse*, erythema, hypotensive]
+
+  title: Treatment of Contrast Reaction - Hypotensive Diffuse Erythema
+  text: |
+    All forms
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+
+    Hypotensive Diffuse Erythema:
+    IV fluids 0.9% normal saline 1,000mL rapidly OR Lactated Ringer’s 1,000mL rapidly
+
+    If profound or unresponsive to fluids alone can also consider:
+    Epinephrine (IV): IV 1 mL of 1:10,000 dilution (0.1 mg); administer slowly
+    into a running IV infusion of fluids; can repeat every few minutes as needed up to 10mL (1 mg) total
+
+    OR (if no IV access)
+    Epinephrine (IM): IM 0.3 mL of 1:1,000 dilution (0.3 mg); can repeat every 5-15 minutes up to 1 mL (1 mg) total
+    Epinephrine auto-injector (EpiPen® or equivalent) (0.3 mL of 1:1,000 dilution, fixed[0.3mg]); can repeat every 5-15 minutes up to three times
+
+    Note: in hypotensive patients, the preferred route of epinephrine delivery is IV, as the extremities may not be perfused sufficiently
+    to allow for adequate absorption of IM administered drug.
+
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Contrast Reaction - Normotensive Diffuse Erythema]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, bronchospasm]
+
+  title: Treatment of Contrast Reaction - Bronchospasm
+  text: Sure Doc! Are you looking to treat a mild, moderate or severe Bronchospasm contrast reaction?
+  quick_options: [Treatment of Mild Contrast Reaction - Bronchospasm, Treatment of Moderate Contrast Reaction - Bronchospasm, Treatment of Severe Contrast Reaction - Bronchospasm]
+
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, bronchospasm, mild]
+
+  title: Treatment of Mild Contrast Reaction - Bronchospasm
+  text: |
+    All forms
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+
+    Mild Bronchospasm
+    - Beta agonist inhaler (Albuterol®) 2 puffs (90 mcg/puff) for a total of 180 mcg; can repeat up to 3 times
+
+    - Consider sending patient to the Emergency Department or calling emergency response team or 911, based
+    upon the completeness of the response to the beta agonist inhaler
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Moderate Contrast Reaction - Bronchospasm, Treatment of Severe Contrast Reaction - Bronchospasm]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, bronchospasm, moderate]
+
+  title: Treatment of Moderate Contrast Reaction - Bronchospasm
+  text: |
+    All forms
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+
+    Moderate Bronchospasm
+    - Beta agonist inhaler (Albuterol®) 2 puffs (90 mcg/puff) for a total of 180 mcg; can repeat up to 3 times
+    - Consider adding epinephrine (IM) IM 0.3mL of 1:1,000 dilution (0.3mg); can repeat every 5-15 minutes up to 1 mL (1 mg) total
+    or Epinephrine auto-injector (EpiPen® or equivalent) (0.3 mL of 1:1,000 dilution, fixed[0.3mg]); can repeat every 5-15 minutes up to three times
+
+    OR
+    - Epinephrine (IV) IV 1 mL of 1:10,000 dilution (0.1 mg); administer slowly into a running IV infusion of fluids or use saline flush;
+    can repeat every few minutes as needed up to 10 mL (1 mg) total
+
+    * Note in hypotensive patients, the preferred route of epinephrine delivery is IV, as the extremities may not be perfused sufficiently
+      to allow for adequate absorption of IM administered drug.
+
+    - Consider sending patient to the Emergency Department or calling emergency response team or 911, based
+      upon the completeness of the response
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Severe Contrast Reaction - Bronchospasm, Treatment of Mild Contrast Reaction - Bronchospasm]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, bronchospasm, severe]
+
+  title: Treatment of Severe Contrast Reaction - Bronchospasm
+  text: |
+    All forms
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+
+  Severe Bronchospasm
+  - Epinephrine (IV) IV 1 mL of 1:10,000 dilution (0.1 mg); administer slowly into a running IV infusion of fluids or use saline flush;
+    can repeat every few minutes as needed up to 10 mL (1 mg) total
+  OR
+  - Epinephrine (IM) IM 0.3mL of 1:1,000 dilution (0.3mg); can repeat every 5-15 minutes up to 1 mL (1 mg) total
+    or Epinephrine auto-injector (EpiPen® or equivalent) (0.3 mL of 1:1,000 dilution, fixed[0.3mg]); can repeat every 5-15 minutes up to three times
+
+  AND
+  - Beta agonist inhaler (Albuterol®) (may work synergistically) 2 puffs (90 mcg/puff) for a total of 180 mcg; can repeat up to 3 times
+  - Call emergency response team or 911
+
+  * Note in hypotensive patients, the preferred route of epinephrine delivery is IV, as the extremities may not be perfused sufficiently
+  to allow for adequate absorption of IM administered drug.
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Moderate Contrast Reaction - Bronchospasm, Treatment of Mild Contrast Reaction - Bronchospasm]
+
+# Laryngeal Edema Contrast Reaction
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, laryngeal*, edema]
+
+  title: Treatment of Contrast Reaction - Laryngeal Edema
+  text: |
+    All forms
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+
+    - Epinephrine (IV) IV 1 mL of 1:10,000 dilution (0.1 mg); administer slowly into a running IV infusion of fluids or use saline flush;
+    can repeat every few minutes as needed up to 10 mL (1 mg) total
+    OR
+    - Epinephrine (IM) IM 0.3mL of 1:1,000 dilution (0.3mg); can repeat every 5-15 minutes up to 1 mL (1 mg) total
+    or Epinephrine auto-injector (EpiPen® or equivalent) (0.3 mL of 1:1,000 dilution, fixed[0.3mg]); can repeat every 5-15 minutes up to three times
+
+    * Note in hypotensive patients, the preferred route of epinephrine delivery is IV, as the extremities may not be perfused sufficiently
+    to allow for adequate absorption of IM administered drug.
+
+    - Consider sending patient to the Emergency Department or calling emergency response team or 911, based
+    upon the completeness of the response
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: []
+
+
+# Hypotensive Contrast Reaction
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hypotension]
+  - [treatment, iodinated*, contrast, reaction, low, blood pressure]
+
+  title: Treatment of Contrast Reaction - Hypotension
+  text: Sure Doc! Are you looking to treat Hypotension with Bradycardia or Hypotension with Tachycardia?
+  quick_options: [Treatment of Mild Contrast Reaction - Hypotension with bradycardia, Treatment of Severe Contrast Reaction - Hypotension with bradycardia, Treatment of Contrast Reaction - Hypotension with tachycardia]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hypotension, bradycardia]
+
+  title: Treatment of Contrast Reaction - Hypotension with bradycardia
+  text: Sure Doc! Are you looking to treat mild or severe hypotension with bradycardia?
+  quick_options: [Treatment of Severe Contrast Reaction - Hypotension, Treatment of Mild Contrast Reaction - Hypotension, Treatment of Contrast Reaction - Hypotension with tachycardia]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hypotension, bradycardia, mild]
+
+  title: Treatment of Mild Contrast Reaction - Hypotension
+  text: |
+    Hypotension with bradycardia (pulse <60bpm) if mild: No other treatment usually necessary
+    All forms
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+    - Elevate legs at least 60 degrees
+    - IV fluids: 0.9% normal saline or Lactated Ringers; 1,000mL rapidly
+
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Severe Contrast Reaction - Hypotension, Treatment of Contrast Reaction - Hypotension with tachycardia]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hypotension, bradycardia, severe]
+
+  title: Treatment of Severe Contrast Reaction - Hypotension
+  text: |
+    All forms
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+    - Elevate legs at least 60 degrees
+    - IV fluids: 0.9% normal saline or Lactated Ringers; 1,000mL rapidly
+
+    If severe (patient remains symptomatic despite above measures)
+    In addition to above measures:
+    - Atropine (IV) 0.6 – 1.0 mg; administer into a running IV infusion of fluids; can repeat up to 3 mg total
+    Consider calling the emergency response team or 911
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Mild Contrast Reaction - Hypotension, Treatment of Contrast Reaction - Hypotension with tachycardia]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hypotension, tachycardia]
+  - [treatment, iodinated*, contrast, reaction, hypotension, anaphylactoid]
+
+  title: Treatment of Contrast Reaction - Hypotension with tachycardia
+  text: |
+    All forms
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+    - Elevate legs at least 60 degrees
+    - IV fluids: 0.9% normal saline or Lactated Ringers; 1,000mL rapidly
+
+    Hypotension with tachycardia (pulse > 100bom) if hypotension persists:
+    - Epinephrine (IV): IV 1 mL of 1:10,000 dilution (0.1 mg); administer slowly
+      into a running IV infusion of fluids; can repeat every few minutes as needed up to 10mL (1 mg) total
+    OR
+    - Epinephrine (IM): IM 0.3mL of 1:1,000 dilution (0.3mg); can repeat every 5-15 minutes up to 1 mL (1 mg) total
+    OR
+    - Epinephrine auto-injector (EpiPen® or equivalent): (0.3 mL of 1:1,000 dilution, fixed[0.3mg]); can repeat every
+    5-15 minutes up to three times
+
+    Note: in hypotensive patients, the preferred route of epinephrine delivery is IV, as the extremities may not be perfused sufficiently
+    to allow for adequate absorption of IM administered drug.
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Mild Contrast Reaction - Hypotension, Treatment of Severe Contrast Reaction - Hypotension]
+
+# Hypertensive Crisis Contrast Reactions
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hypertensive, crisis*]
+  - [treatment, iodinated*, contrast, reaction, high, blood, pressure]
+
+  title: Treatment of Contrast Reaction - Hypertensive Crisis
+  text: |
+    All forms
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+    - Labetalol (IV): 20 mg IV; administer slowly, over 2 min; can double the dose every 10 min (e.g., 40 mg 10 min later, then 80 mg 10 min after that)
+    OR (if labetalol not available)
+    - Nitroglycerin tablet (SL): 0.4 mg tablet; can repeat every 5 – 10 min and Furosemide (Lasix®) (IV) 20 – 40 mg IV; administer slowly over 2 min
+    - Call emergency response team or 911
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: [Treatment of Contrast Reaction - Hypotension]
+
+# Pulmonary Edema Contrast Reactions
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, pulmonary, edema]
+
+  title: Treatment of Contrast Reaction - Pulmonary Edema
+  text: |
+    All forms
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+    - Elevate head of bed, if possible
+    - Furosemide (Lasix®) 20–40 mg IV; administer slowly over 2 min
+    - Call emergency response team or 911
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: []
+
+# Seizures/Convulsions
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, seizures]
+
+  title: Treatment of Contrast Reaction - Seizures
+  text: |
+    - Observe and protect the patient
+    - Turn patient on side to avoid aspiration
+    - Suction airway, as needed
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - O2 by mask 6–10 L / min
+    - Lorazepam (IV) IV 2–4 mg IV; administer slowly, to maximum dose of 4 mg
+    - If unremitting Call emergency response team or 911
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: []
+
+# Hypoglycemia Contrast Reactions
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hypoglycemia]
+
+  title: Treatment of Contrast Reaction - Hypoglycemia
+  text: Sure Doc! Is your patient able to swallow safely?
+  quick_options: [Yes my patient can swallow, No my patient is unable to swallow]
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hypoglycemia, swallow]
+
+  title: Yes my patient can swallow
+  text: |
+    - Preserve IV access
+    - O2 by mask 6–10 L / min
+    - If patient is able to swallow safely: Oral glucose Two sugar packets or 15 g of glucose tablet/gel or ½ cup (4 oz) of fruit juice
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: []
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, hypoglycemia, swallow, unable]
+
+  title: No my patient is unable to swallow
+  text: |
+    - Preserve IV access
+    - O2 by mask 6–10 L / min
+
+    - If patient is unable to swallow safely and IV access available: Dextrose 50% (IV) D50W 1 ampule (25 grams)
+      IV administer over 2 min D5W or D5NS (IV) as adjunct therapy Administer at a rate of 100 mL/hour
+    - If patient is unable to swallow safely no IV access is available: Glucagon (IM) IM 1 mg
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: []
+
+# Anxiety Attack Contrast Reactions
+
+- tags:
+  - [treatment, iodinated*, contrast, reaction, anxiety, attack*]
+
+  title: Treatment of Contrast Reaction - Anxiety Attack
+  text: |
+    - Diagnosis of exclusion
+    - Assess patient for developing signs and symptoms that might indicate another type of reaction
+    - Preserve IV access
+    - Monitor vitals
+    - Pulse oximeter
+    - If no identifiable manifestations and normal oxygenation, consider this diagnosis
+    - Reassure patient
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: []
+
+- tags:
+  - [contrast, reaction, rebound, prevention]
+  - [contrast, reaction, intravenous, corticosteroids]
+
+  title: Contrast Reaction Rebound Prevention
+  text: |
+    Note: While IV corticosteroids may help prevent a short-term recurrence of an
+    allergic-like reaction,they are not useful in the acute treatment of any reaction.
+    However,these maybe considered for patients having severe allergic-like
+    manifestations prior to transportation to an Emergency Department or inpatient unit.
+
+    Treatment:
+    - Hydrocortisone (Solu-Cortef®) (IV) IV 5 mg / kg; administer over 1-2 min
+    OR
+    - Methylprednisolone (Solu-Medrol®) (IV) IV 1 mg / kg; administer over 1-2 min
+  source_title: ACR
+  source_url: https://www.acr.org/Clinical-Resources/Contrast-Manual
+  quick_options: []
+
+

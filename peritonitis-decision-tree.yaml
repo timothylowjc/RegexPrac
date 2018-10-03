@@ -1,0 +1,921 @@
+
+
+entities:
+
+- type_keys: [keyword]
+  names: [peritoneal dialysis, pd]
+- type_keys: [keyword]
+  names: [patient, pt]
+- type_keys: [keyword]
+  names: [management, mgmt]
+- type_keys: [keyword]
+  names: [treatment, treat, trtmt]
+- type_keys: [keyword]
+  names: [unable, not able, cannot, can't]
+- type_keys: [keyword]
+  names: [diagnose, diagnoze, diagnostic, diagnosis]
+- type_keys: [keyword]
+  names: [organism, orgm]
+- type_keys: [keyword]
+  names: [empiric, emp]
+- type_keys: [keyword]
+  names: [antibiotic, antibiotics]
+
+content:
+
+# How do I know my patient has peritonitis?
+# How do I diagnose peritonitis?
+
+- tags:
+  - [how*, patient, peritonitis]
+  - [how*, diagnose, peritonitis]
+
+  title: Diagnosis of Peritonitis
+  text : |
+    Sure Doc! I can help you diagnose peritonitis based on the ISPD 2016 guidelines.
+    Does your patient have at least 2 of the following are present: (1) clinical features consistent with peritonitis,
+    i.e. abdominal pain and/or cloudy dialysis effluent; (2) dialysis effluent white cell count > 100/μL or > 0.1 × 109/L
+    (after a dwell time of at least 2 hours), with > 50% polymorphonuclear; and (3) positive dialysis effluent culture (1C).
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: yes, reply: Peritonitis Management}
+  - {display: no, reply: Peritonitis <2}
+
+
+- tags:
+  - [how*, patient, peritonitis, no]
+
+  title: Peritonitis <2
+  text : |
+    We recommend that PD patients presenting with cloudy effluent be presumed to have peritonitis and
+    treated as such until the diagnosis can be confirmed or excluded (1C).
+
+    Patients with peritonitis usually present with cloudy PD effluent and abdominal pain. Cloudy effluent almost
+    always represents infectious peritonitis, although there are other differential diagnoses (Table 4) (206).
+    Some patients present with cloudy effluent but no or minimal abdominal pain. On the other hand, peritonitis
+    should also be included in the differential diagnosis of the PD patient presenting with abdominal pain, even
+    if the effluent is clear. In addition to the presenting symptoms, the patient should be questioned about any
+    recent contamination, accidental disconnection, endoscopic or gynecologic procedure, as well as the presence
+    of constipation or diarrhea. In addition, the patient should be questioned about past history of peritonitis
+    and ESI.
+
+    Else, unlikely to have peritonitis.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Cloudy Effluent, reply: Peritonitis Management}
+
+- tags:
+  - [how*, patient, has*, peritonitis, yes]
+
+  title: Peritonitis Management
+  text : |
+    When peritonitis is suspected, dialysis effluent should be drained, carefully inspected, and sent for cell count
+    with differential, Gram stain, and culture (207). An effluent cell count with white blood cells (WBC) > 100/μL
+    (after a dwell time of at least 2 hours), with > 50% PMN, is highly suggestive of peritonitis (208).
+    Abdominal X ray is generally not necessary. Peripheral blood culture is usually not necessary but should be
+    obtained if the patient is clinically septic. To prevent delay in treatment, antibiotic therapy (see below)
+    should be initiated once the appropriate dialysis effluent specimens have been collected, without waiting for
+    the results of laboratory testing.
+
+    The WBC count in the effluent depends in part on the length of the dwell.
+    For patients on APD with rapid cycle treatment, the clinician should use the percentage of PMN
+    rather than the absolute WBC count to diagnose peritonitis, and a proportion above 50% PMN is strong evidence
+    of peritonitis, even if the absolute WBC count is less than 100/μL (208). On the other hand,
+    APD patients without a daytime exchange who present with abdominal pain during the daytime may have no effluent
+    to drain. In this case, 1 L of dialysis solution should be infused, dwelled for 1 to 2 hours, and then drained
+    for inspection and laboratory testing.
+
+    We recommend that empirical antibiotic therapy be initiated as soon as possible after appropriate microbiological specimens have been obtained (1C).
+
+    We recommend that empirical antibiotic regimens be center-specific and cover both gram-positive and gram-negative organisms (1C).
+
+    We recommend that gram-positive organisms be covered by vancomycin or a first generation cephalosporin and gram-negative organisms by a third-generation cephalosporin or an aminoglycoside (1B).
+
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Identification of Causative Organism , reply: Identification of Causative Organism }
+  - {display: Gram Positive, reply: Gram Positive}
+  - {display: Gram Negative, reply: Gram Negative}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [how*, patient, peritonitis, identification, Causative*, Organism*]
+
+  title: Identification of Causative Organism
+  text : |
+    We recommend that the blood-culture bottle be the preferred technique for bacterial culture of PD effluent (1C).
+
+    We suggest that sampling and culture methods be reviewed and improved if more than 15% of peritonitis episodes are culture-negative (2C).
+
+    Gram stain of the PD effluent should be performed even though the result is often negative (209).
+    The yield on the Gram stain is increased if it is performed on centrifuged specimens.
+    An appropriate method of culturing PD effluent is the most important step in establishing the causative organism.
+    In some specialized centers, one could achieve less than 10% rate of culture negative peritonitis.
+    Identification of the organism and subsequent antibiotic sensitivities help to guide the choice of antibiotic,
+    and the type of organism often indicates the possible source of infection. Bedside inoculation of 5 – 10 mL
+    effluent in 2 (aerobic and anaerobic) blood-culture bottles has a reasonable sensitivity, and the
+    culture-negative rate is typically around 10 – 20%. (210,211). The yield of peritoneal fluid culture is
+    enhanced by inoculating the fluid directly into rapid blood-culture bottle kits (e.g. BACTEC, Kent, UK;
+    Septi-Chek, Roche Diagnostics, Basel, Switzerland; BacT/Alert, Biomerieux, Inc., Basingstoke, UK),
+    centrifuging PD fluid and culturing the pellet, or the lysis centrifugation technique compared to inoculation
+    into standard blood-culture bottles. Specifically, centrifugation of 50 mL PD effluent at 3,000 g for 15 minutes,
+    followed by resuspension of the sediment in 3 – 5 mL supernatant and inoculation on solid culture media or
+    standard blood-culture media, increases the yield by 5 to 10 times but is more cumbersome (212,213).
+    The combination of water lysis, Tween-80 blood agar and Triton-X treatment of the PD effluent is also a
+    sensitive culture method (214). The specimens should arrive at the laboratory within 6 hours. If immediate
+    delivery to the laboratory is not possible, the inoculated culture bottles should ideally be incubated at 37°C.
+    The solid media should be incubated in aerobic, microaerophilic, and anaerobic environments.
+
+    The speed with which bacteriological diagnosis can be established is very important. Concentration methods do
+    not only facilitate microbial identification, but also reduce the time needed for a positive culture.
+    In over 75% of cases, microbiologic diagnosis can be established in less than 3 days. When the causative
+    microorganism has been identified, subsequent cultures for monitoring may be performed by only inoculating the
+    effluent in blood-culture bottles.
+
+    When cultures remain negative after 3 – 5 days of incubation, PD effluent should be sent for repeat cell count,
+    differential count, fungal, and mycobacterial culture. In addition, subculture on media with aerobic, anaerobic,
+    and microaerophilic incubation conditions for a further 3 – 4 days may help to identify slow-growing fastidious
+    bacteria and yeasts that are undetectable in some automated culture systems.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Gram Positive, reply: Gram Positive}
+  - {display: Gram Negative, reply: Gram Negative}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+  - {display: Dosage of Antibiotics, reply: Dosage of Antibiotics}
+
+- tags:
+  - [how*, patient, peritonitis, gram, positive]
+
+  title: Gram Positive
+  text : |
+    For gram-positive coverage, several studies compared a first-generation cephalosporin with a
+    glycopeptide-based regimen (228–231). When analyzed as a whole, glycopeptide-based regimens result in a
+    higher complete cure rate, but there is no difference in the rate of primary treatment failure, relapse,
+    or catheter removal (203). A systematic review noted that the result was largely influenced by 1 study,
+    in which the dosage of cefazolin was substantially lower than current recommendations (228).
+    Other studies found no difference in cure rates for vancomycin and cefazolin when an appropriate cephalosporin
+    dose was used (228,230,231). Nonetheless, some PD units have a high rate of methicillin-resistant organisms
+    and vancomycin may be preferable for empirical gram-positive coverage (232), although it remains controversial
+    what threshold prevalence of methicillin resistance would justify the routine empirical use of vancomycin as
+    gram-positive coverage.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+  - {display: Dosage of Antibiotics, reply: Dosage of Antibiotics}
+
+- tags:
+  - [how*, patient, peritonitis, gram, negative]
+
+  title: Gram Negative
+  text : |
+    For the coverage of gram-negative organisms, previous studies have shown that aminoglycosides
+    (e.g. gentamicin or netilmicin) (233), ceftazidime (233), cefepime (234), or a carbapenem (235,236)
+    are all effective. Cefepime per se has reasonable activity against gram-positive bacteria and monotherapy
+    may be feasible (234). Fluoroquinolones could also be used if supported by the local antimicrobial
+    susceptibilities of antibiotic sensitivities (237–241). For patients allergic to cephalosporins,
+    aztreonam is also a possible alternative (242–244). In a randomized controlled study, IP netilmicin and
+    ceftazidime had similar efficacy to empirical gram-negative coverage (233). Short-term aminoglycoside treatment
+    is inexpensive, safe, and provides good gram-negative coverage. There is no evidence that short courses of
+    aminoglycosides accelerate the loss of residual renal function (233,245–247). However, repeated or prolonged
+    aminoglycoside treatment (more than 3 weeks) was associated with a high incidence of vestibular toxicity or
+    oto-toxicity and should be avoided (248,249).
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+  - {display: Dosage of Antibiotics, reply: Dosage of Antibiotics}
+
+- tags:
+  - [selection*, patient, peritonitis, antibiotic, antibiotics, empiric*]
+
+  title: Empiric Antibiotic Selection
+  text : |
+    We recommend that empirical antibiotic therapy be initiated as soon as possible after appropriate microbiological specimens have been obtained (1C).
+
+    We recommend that empirical antibiotic regimens be center-specific and cover both gram-positive and gram-negative organisms (1C).
+
+    We recommend that gram-positive organisms be covered by vancomycin or a first generation cephalosporin and gram-negative organisms by a third-generation cephalosporin or an aminoglycoside (1B).
+
+    Antibiotic treatment should aim for rapid resolution of inflammation and preservation of the peritoneal membrane
+    function. No antibiotic regimen has been proved to be superior to others as empirical treatment (203), although
+    the combination of a glycopeptide (vancomycin or teicoplanin) plus ceftazidime was considered to be superior to
+    other regimens in a proportional meta-analysis (227).
+
+    In addition to the above combinations, a variety of regimens have been shown by prospective trials to have acceptable
+    results (250). For example, imipenem/cilastatin monotherapy was as effective as cefazolin plus ceftazidime (236),
+    and cefepime was as effective as vancomycin plus netilmicin (234). In another study, oral ofloxacin alone was
+    not inferior to cephalothin plus tobramycin (241), but the effectiveness of ciprofloxacin monotherapy has
+    declined markedly in the past decade (251).
+
+    It is important to note that antibiotic resistance may develop with extensive empiric use of broad-spectrum
+    cephalosporins or fluoroquinolones. The prevalence of resistant pathogens in each program should be regularly
+    monitored and the choice of empirical antibiotic may need to be changed accordingly.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Dosage of Antibiotics, reply: Dosage of Antibiotics}
+  - {display: Identification of Causative Organism , reply: Identification of Causative Organism }
+
+- tags:
+  - [how*, patient, peritonitis, antibiotic, antibiotics, empiric*]
+
+  title: Dosage of Antibiotics
+  text : |
+    We recommend that IP antibiotics be the preferred route of administration unless the patient has features of
+    systemic sepsis (1B).
+
+    We suggest that IP aminoglycoside be administered as daily intermittent dosing (2B).
+
+    We recommend that prolonged courses of IP aminoglycoside be avoided (1C).
+
+    We suggest that IP vancomycin be administered intermittently and the serum vancomycin level be kept above
+    15 μg/mL (2C).
+
+    We suggest that IP cephalosporin be administered either continuously (in each exchange) or on a daily
+    intermittent basis (2C).
+
+    The recommended dosage of antibiotics for the treatment of PD-related peritonitis is summarized in Tables 5
+    and 6 (236–239,252–303). However, the recommended dosages of many antibiotics are based on published clinical
+    experience rather than formal pharmacokinetic studies. It was recommended previously that for patients with
+    substantial residual renal function, the dose of antibiotics that have renal excretion needs to be adjusted
+    (12,13). However, recent studies suggest that such adjustments are not necessary (284,304).
+
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Intraperitoneal Antibiotic Dosing, reply: Intraperitoneal Antibiotic Dosing}
+  - {display: Systemic Antibiotic Dosing, reply: Systemic Antibiotic Dosing}
+  - {display: Antibiotic Delivery and Stability , reply: Antibiotic Delivery and Stability}
+
+- tags:
+  - [patient, peritonitis, antibiotic, antibiotics, Intraperitoneal, dosing]
+
+  title: Intraperitoneal Antibiotic Dosing
+  text : |
+    Attached above is Table 5, Intraperitoneal Antibiotic Dosing Recommendations for Treatment of Peritonitis
+  image_url : 200_03.jpg
+  image_title : Table 5, Intraperitoneal Antibiotic Dosing Recommendations for Treatment of Peritonitis
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Systemic Antibiotic Dosing, reply: Systemic Antibiotic Dosing}
+  - {display: Antibiotic Delivery and Stability , reply: Antibiotic Delivery and Stability}
+
+- tags:
+  - [patient, peritonitis, antibiotic, antibiotics, Systemic, dosing]
+
+  title: Systemic Antibiotic Dosing
+  text : |
+    Attached above is Table 6, Systemic Antibiotic Dosing Recommendations for Treatment of Peritonitis
+  image_url : 200_04.jpg
+  image_title : Table 6, Systemic Antibiotic Dosing Recommendations for Treatment of Peritonitis
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Intraperitoneal Antibiotic Dosing, reply: Intraperitoneal Antibiotic Dosing}
+  - {display: Antibiotic Delivery and Stability , reply: Antibiotic Delivery and Stability}
+
+- tags:
+  - [patient, peritonitis, antibiotic, antibiotics, delivery, stability]
+
+  title: Antibiotic Delivery and Stability
+  text : |
+    The stability and compatibility of various antibiotics for IP administration was reviewed previously (326).
+    In essence, vancomycin, aminoglycosides, and cephalosporins can be mixed in the same dialysis solution bag
+    without loss of bioactivity. Aminoglycosides and cephalosporins can be added to the same bag, although
+    aminoglycoside should not be added to the same bag with penicillins because of chemical incompatibility (326).
+    For any antibiotics that are to be admixed, separate syringes must be used for adding the antibiotics.
+    Although vancomycin and ceftazidime are compatible when added to dialysis solutions (1 L total volume or greater),
+    they are incompatible if combined in the same syringe or added to an empty dialysis solution bag for reinfusion
+    into the patient.
+
+    Antibiotics are stable for variable times after being added to the PD solution (327).
+    Vancomycin is stable for 28 days in dialysis solutions stored at room temperature, although higher ambient
+    temperatures will reduce the duration of stability. Gentamicin is stable for 14 days both at room temperature
+    and under refrigeration, but the duration of stability is reduced by admixture with heparin. Cefazolin is
+    stable for 8 days at room temperature or for 14 days if refrigerated; addition of heparin has no adverse
+    influence. Ceftazidime is stable for 4 days at room temperature or 7 days if refrigerated. Cefepime is stable
+    for 14 days if the solution is refrigerated (328).
+
+    Data on the stability of various new antibiotics and PD solutions are limited and often fragmented (329–332).
+    Clinicians should remain alert for new studies in this area. In general, icodextrin-based PD solutions are
+    compatible with vancomycin, cefazolin, ceftazidime, and gentamicin (329,333,334). When premixed in icodextrin
+    solution, these antibiotics are least stable at 37°C and most stable at 4°C, permitting storage for 14 days
+    when refrigerated and pre-warming to body temperature prior to administration (334).
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Special Considerations for APD, reply: Special Considerations for APD}
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+
+- tags:
+  - [patient, peritonitis, antibiotic, antibiotics, considerations, APD]
+
+  title: Special Considerations for APD
+  text : |
+    There is a substantial knowledge gap regarding the antibiotic dosing requirements for the treatment of
+    peritonitis in APD patients. In general, the intermittent IP dosing listed in Table 4 could be given in the day
+    dwell of APD patients. However, extrapolation of data from CAPD to APD may result in significant under-dosing
+    in APD patients because rapid exchanges in APD may lead to inadequate time to achieve therapeutic levels when
+    antibiotics are given IP intermittently, and APD results in a higher peritoneal clearance of antibiotics than
+    CAPD. This problem is particularly obvious amongst high peritoneal transporters. Alternatively, APD patients
+    who develop peritonitis may switch temporarily to CAPD. However, it is not always practical to switch because
+    patients may not be familiar with the exchange technique, and the supplies for CAPD may not be immediately
+    available. A recent report also found that this practice is associated with an increased risk of technique
+    failure and fluid overload (335). Resetting the cycler to permit a longer exchange time in such cases is a
+    logical alternative, but the efficacy of this approach has not been well studied.
+
+    For patients who remain on rapid-cycle APD, there are few data concerning efficacy of first-generation
+    cephalosporins given intermittently. For APD patients treated with cephalosporins added to the daytime exchange
+    only, the nighttime IP levels are below the MIC of most organisms. Adding first-generation cephalosporin to
+    each exchange would appear to be the safest approach. Although the IP vancomycin level may be low in APD
+    patients due to slow diffusion from blood to dialysis solution, a randomized controlled trial in children
+    showed that intermittent dosing of vancomycin was as effective as continuous dosing in children receiving APD
+    (311). Vancomycin can probably be given intermittently for APD patients. Oral ciprofloxacin can also achieve
+    adequate levels within the peritoneum in APD patients (323). In a retrospective, single-center observational
+    cohort study of 508 episodes of PD-associated peritonitis in 208 patients, no differences in relapse rates,
+    mortality, or the combined end-point of mortality and catheter removal were observed between APD and CAPD
+    patients continuing their own PD modality during continuous IP antibiotic treatment in each PD exchange,
+    although elevated dialysis effluent leukocyte counts and antibiotic treatment durations were longer in the
+    former (90).
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, adjunctive, treatment]
+
+  title: Adjunctive Treatments
+  text : |
+    Some patients with PD-related peritonitis could be managed on an outpatient basis.
+    The decision to hospitalize a patient depends on many factors, including hemodynamic status of the patient,
+    severity of signs and symptoms, and, for APD patients, the type of treatment schedule chosen, as well as the
+    ability to provide IP antibiotics as an outpatient and the reliability of the patient. The rationale for
+    anti-fungal prophylaxis has been discussed in a previous section (see Secondary Prevention, above).
+
+    Patients with cloudy effluent may benefit from the addition of heparin 500 units/L IP to prevent occlusion of
+    the catheter by fibrin. Depending on the severity of symptoms, some patients would require analgesics for pain
+    control. At the initial presentation and before IP antibiotics are initiated, 1 or 2 rapid PD exchanges are
+    often performed for pain relief, although there are no data supporting this approach. A randomized controlled
+    trial showed that more extensive rapid-cycle peritoneal lavage during the first 24 hours of peritonitis did
+    not affect the rate of complete cure or relapse as compared to the usual practice of 2 rapid exchange cycles
+    (336).
+
+    Intraperitoneal urokinase has been advocated for the treatment of biofilm, which may be the cause of refractory
+    or relapsing peritonitis. A retrospective study found that IP urokinase and oral rifampicin, in addition to
+    conventional antibiotics, resulted in catheter salvage in 64% of cases with persisting asymptomatic infection
+    following coagulase-negative staphylococcus peritonitis (337). Randomized controlled trials, however, failed
+    to show any benefit of IP urokinase for the treatment of refractory peritonitis (338–340). The rates of
+    complete cure, catheter removal, or relapsing episode, as well as overall mortality were not affected by
+    adjunctive treatment with IP urokinase. In contrast, 1 randomized controlled study showed that simultaneous
+    catheter removal and replacement was superior to IP urokinase in reducing relapsing peritonitis episodes (341).
+
+    Peritoneal permeability to water, glucose, and proteins typically increases during peritonitis. Reduction in
+    ultrafiltration is commonly observed, and fluid overload is a frequent complication. Temporary use of
+    hypertonic exchanges and short dwell times may be needed to maintain adequate fluid removal. Temporary use of
+    icodextrin solution may prevent fluid overload in PD patients with acute peritonitis (342). Because of rapid
+    glucose absorption, glycemic control may worsen in diabetic patients. Blood glucose monitoring with appropriate
+    adjustments of insulin dosage may be needed. Protein loss during peritonitis is also increased. Screening for
+    malnutrition should be undertaken in patients with prolonged peritoneal inflammation.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Special Considerations for APD, reply: Special Considerations for APD}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, antibiotic, antibiotics, subsequent, management*]
+
+  title: Subsequent Management of Peritonitis
+  text : |
+    We recommend that antibiotic therapy be adjusted to narrow-spectrum agents, as appropriate, once culture results and sensitivities are known. (1C).
+
+    The management algorithms for gram-positive cocci and gram-negative bacilli identified in dialysis effluent are
+    summarized in Figures 2 and 3, respectively. Within 48 hours of initiating therapy, most patients with
+    PD-related peritonitis will show considerable clinical improvement. The effluent should be visually inspected
+    regularly to determine whether clearing is occurring. If there is no improvement after 48 hours, cell counts
+    and repeat cultures should be performed. In addition, monitoring of WBC count in PD effluent may predict
+    treatment response. A retrospective study showed that dialysis effluent WBC count ≥ 1,090/mm3 on day 3 was an
+    independent prognostic marker for treatment failure (343).
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Management algorithm for gram-negative bacilli, reply: Management algorithm for gram-negative bacilli}
+  - {display: Management algorithm for gram-positive cocci, reply: Management algorithm for gram-positive cocci}
+  - {display: Refractory Peritonitis, reply: Refractory Peritonitis}
+  - {display: Repeat Peritonitis, reply: Repeat Peritonitis}
+  - {display: Coagulase-Negative Staphylococcus, reply: Coagulase-Negative Staphylococcus}
+  - {display: Enterococcus Species, reply: Enterococcus Species}
+  - {display: Streptococcal Species, reply: Streptococcal Species}
+  - {display: Staphylococcus Aureus, reply: Staphylococcus Aureus}
+  - {display: Corynebacterium Peritonitis, reply: Corynebacterium Peritonitis}
+  - {display: Pseudomonas Peritonitis, reply: Pseudomonas Peritonitis}
+  - {display: Other Gram-Negative Bacteria, reply: Other Gram-Negative Bacteria}
+  - {display: Polymicrobial Peritonitis, reply: Polymicrobial Peritonitis}
+  - {display: Culture-Negative Peritonitis, reply: Culture-Negative Peritonitis}
+  - {display: Fungal Peritonitis, reply: Fungal Peritonitis}
+  - {display: Tuberculous Peritonitis, reply: Tuberculous Peritonitis}
+  - {display: Non-Tuberculous Mycobacterial Peritonitis, reply: Non-Tuberculous Mycobacterial Peritonitis}
+  - {display: Catheter Removal and Re-Insertion, reply: Catheter Removal and Re-Insertion}
+
+- tags:
+  - [patient, peritonitis, antibiotic, antibiotics, gram, positive, cocci, management]
+
+  title: Management algorithm for gram-positive cocci
+  text : |
+    Attached above is Management algorithm for gram-positive cocci identified in dialysis effluent.
+  image_url : 200_05.jpg
+  image_title : Management algorithm for gram-positive cocci identified in dialysis effluent.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, antibiotic, antibiotics, gram, negative, cocci, management]
+
+  title: Management algorithm for gram-negative bacilli
+  text : |
+    Attached above is Management algorithm for gram-negative bacilli or mixed bacterial growth identified in dialysis effluent, Trimethoprim/sulfamethoxazole is preferred for Stenotrophomonas species.
+  image_url : 200_06.jpg
+  image_title : Management algorithm for gram-negative bacilli or mixed bacterial growth identified in dialysis effluent, Trimethoprim/sulfamethoxazole is preferred for Stenotrophomonas species.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+
+- tags:
+  - [patient, peritonitis, antibiotic, antibiotics, Refractory, management*]
+
+  title: Refractory Peritonitis
+  text : |
+    We recommend that the PD catheter be removed promptly in refractory peritonitis episodes, defined as failure of the PD effluent to clear up after 5 days of appropriate antibiotics (1C).
+
+    After initiation of antibiotic treatment, there is usually clinical improvement in 72 hours.
+    Refractory peritonitis is defined as failure of the PD effluent to clear up after 5 days of appropriate
+    antibiotics (Table 7). Catheter removal is indicated in case of refractory peritonitis, or earlier if the
+    patient's clinical condition is deteriorating, in order to preserve the peritoneum for future PD as well as
+    preventing morbidity and mortality. Prolonged attempts to treat refractory peritonitis by antibiotics without
+    catheter removal are associated with extended hospital stay, peritoneal membrane damage, increased risk of
+    fungal peritonitis, and excessive mortality (344).
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, antibiotic, antibiotics, relapsing, recurrent*, repeat*]
+
+  title: Relapsing, Recurrent, and Repeat Peritonitis
+  text : |
+    We recommend that timely catheter removal be considered for relapsing, recurrent, or repeat peritonitis episodes (1C).
+
+    The definitions of relapsing, recurrent, and repeat peritonitis are summarized in Table 7.
+    Retrospective studies showed that relapsing, recurrent, and repeat peritonitis episodes are caused by
+    different species of bacteria and probably represent distinct clinical entities (166,345–347).
+    When compared to non-relapsing episodes, relapsing ones are associated with a lower rate of cure,
+    more ultrafiltration problems, and higher rate of technique failure (166,348). Recurrent peritonitis episodes
+    had a worse prognosis than relapsing ones (166,345). A recent study suggested that bacterial DNA fragment
+    levels in PD effluent are significantly higher 5 days before and on the date of completion of antibiotics
+    amongst patients who subsequently develop relapsing or recurrent peritonitis (349). Another study suggests
+    that effluent white cell count and leukocyte strip test at the time of stopping antibiotics may also predict
+    relapse (350). However, further studies are needed to validate these results and confirm their clinical utility.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, coagulase, negative, Staphylococcus]
+
+  title: Coagulase-Negative Staphylococcus
+  text : |
+    We suggest that coagulase-negative staphylococci generally be treated with IP cephalosporins or vancomycin, according to antimicrobial susceptibility, for a period of 2 weeks. (2C).
+
+    Coagulase-negative Staphylococcus peritonitis episodes, especially those caused by S. epidermidis, are mostly
+    due to touch contamination. Many patients with S. epidermidis peritonitis have mild clinical symptoms and
+    respond well to treatment as outpatients (351–353). In some centers, the prevalence of methicillin resistance
+    is now very high (354,355), and vancomycin may have to be considered as empirical therapy. Even for
+    methicillin-sensitive strains, it is important to avoid inadequate IP antibiotic levels, which may lead to
+    relapsing peritonitis. For this reason, continuous dosing of IP first-generation cephalosporins is preferable
+    to intermittent dosing. Effective antibiotic treatment for 2 weeks is generally sufficient (351–354).
+    The patient's exchange technique should be reviewed to prevent another episode.
+
+    Relapsing coagulase-negative Staphylococcus peritonitis suggests colonization of the PD catheter with biofilm,
+    and catheter removal should be considered. When the PD effluent becomes clear with antibiotic therapy, many of
+    these patients could have simultaneous re-insertion of a new catheter as a single procedure under antibiotic
+    coverage, and temporary hemodialysis could be avoided (204). In addition to conventional antibiotics, a
+    retrospective study found that IP urokinase and oral rifampicin resulted in catheter salvage in 64% of cases
+    with persisting asymptomatic infection following coagulase-negative Staphylococcus peritonitis (337), but the
+    benefit of this approach needs to be confirmed by further studies.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, Enterococcus, Species]
+
+  title: Enterococcus Species
+  text : |
+    We suggest that enterococcal peritonitis be treated for 3 weeks with IP vancomycin (2C).
+
+    We suggest adding IP aminoglycoside for severe enterococcal peritonitis (2D).
+
+    For peritonitis due to vancomycin-resistant Enterococcus (VRE), we suggest treatment for 3 weeks with
+    IP ampicillin if the organism is susceptible or with alternative antibiotics
+    (linezolid, quinupristin/dalfopristin, daptomycin or teicoplanin, based on antimicrobial susceptibilities)
+    if the organism is ampicillin-resistant (2D).
+
+    Enterococci are normal flora of the gastrointestinal tract (356,357). Intra-abdominal source must be considered.
+    Other pathogenic organisms are isolated in about half of the cases of enterococcal peritonitis, and the
+    coexistence of other organisms was associated with high rates of catheter removal, permanent hemodialysis
+    transfer, and death (356,357).
+
+    Enterococcal species are always resistant to cephalosporins. Identification of the exact species is important
+    because resistance to penicillins and carbapenems is far more frequently observed in E. faecium than in
+    E. faecalis (358). Although there may be clinical response to empirical therapy with first-generation
+    cephalosporins (359), peritonitis episodes should be treated with IP vancomycin if the organism is susceptible.
+    For patients with severe signs or symptoms, an aminoglycoside may be added for synergy. However,
+    aminoglycosides should not be added to the same bag with penicillins because of chemical incompatibility
+    (see Antibiotic Delivery and Stability). Although ampicillin has little in vitro activity when added to common
+    PD solutions (331), clinical experience suggests clinical efficiency (356). For vancomycin-resistant
+    enterococcus (VRE) causing peritonitis, if the bacterial isolate is ampicillin-susceptible, ampicillin remains
+    the drug of choice. Otherwise, linezolid, quinupristin/dalfopristin, or daptomycin are valid options
+    (278,281,292,360–363). Given the clinical efficacy and profile of adverse effects, daptomycin is probably the
+    first-line antibiotic of choice for peritonitis episodes caused by VRE (278,363–365). Bone marrow suppression
+    usually occurs after 10 to 14 days of linezolid therapy, and prolonged therapy may also result in neurotoxicity.
+    One previous study showed that removal of the PD catheter within 1 week of the onset of refractory enterococcal
+    peritonitis was associated with a significant reduction in the risk of permanent hemodialysis transfer (356).
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, Streptococcal, Species]
+
+  title:  Streptococcal Species
+  text : |
+    We suggest that streptococcal peritonitis be treated with appropriate antibiotics, such as IP ampicillin,
+    for 2 weeks (2C).
+
+    Streptococci frequently originate from the mouth (175), although S. bovis typically comes from the colon (366).
+    Peritonitis episodes caused by streptococci usually respond well to antibiotic treatment (175,367), but
+    viridans streptococcal peritonitis are more likely to be refractory (368). Cefazolin and vancomycin are often
+    effective.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, Staphylococcus, Aureus]
+
+  title: Staphylococcus Aureus
+  text : |
+    We suggest that Staphylococcus aureus peritonitis be treated with effective antibiotics for 3 weeks (2C).
+
+    Peritonitis episodes caused by Staphylococcus aureus are often secondary to exit-site or tunnel infection,
+    although touch contamination is also common. If the bacterial isolate is methicillin-sensitive,
+    a first-generation cephalosporin is the drug of choice. Two retrospective studies found that the initial
+    empiric antibiotic choice between vancomycin and cefazolin had similar clinical outcomes (369,370). If the
+    isolate is methicillin-resistant, IP vancomycin is the drug of choice, but teicoplanin and daptomycin can be
+    used as alternatives (371). One study showed that the use of adjuvant rifampicin for 5 to 7 days may reduce
+    the risk for relapsing or repeat S. aureus peritonitis (369). However, rifampicin is a potent liver enzyme
+    inducer and interaction with other concomitant medications may be problematic.
+
+    Observational data suggest that treatment with effective antibiotics for 3 weeks is needed (369,370,372).
+    Prolonged vancomycin therapy may predispose to the emergence of vancomycin-resistant S. aureus and should be
+    avoided whenever possible. For patients with concomitant S. aureus exit-site or catheter tunnel infection,
+    catheter removal should be considered.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, Corynebacterium]
+
+  title:  Corynebacterium Peritonitis
+  text : |
+    We suggest that corynebacterial peritonitis be treated with effective antibiotics for 3 weeks (2C).
+
+    Corynebacterium species belong to the natural flora of the skin. Infections due to Corynebacterium
+    have been increasingly recognized over the past decades, largely due to improved recognition and
+    microbiological techniques. In a retrospective study, Corynebacterium peritonitis often resulted in relapse
+    or repeat episodes, catheter removal, permanent hemodialysis transfer, and death (373). Another retrospective
+    study found that relapsing Corynebacterium peritonitis was common after a 2-week course of antibiotic treatment,
+    but relapsing episodes can usually be cured with a 3-week course of IP vancomycin (374). For refractory
+    Corynebacterium peritonitis, observational data suggest that catheter removal within 1 week after the onset of
+    peritonitis significantly reduces the risk of permanent hemodialysis transfer (373). For patients with
+    concomitant exit-site or catheter tunnel infection caused by Corynebacterium, early catheter removal should be
+    considered.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, Pseudomonas]
+
+  title: Pseudomonas Peritonitis
+  text : |
+    We suggest that Pseudomonas peritonitis be treated with 2 antibiotics with different mechanisms of action
+    and to which the organism is sensitive (e.g. IP gentamicin or oral ciprofloxacin with IP ceftazidime or cefepime) for 3 weeks (2C).
+
+    We suggest that Pseudomonas peritonitis with concomitant exit-site and tunnel infection be treated with
+    catheter removal (2D).
+
+    Pseudomonas peritonitis is generally severe and often associated with infection of the catheter. Pseudomonas
+    aeruginosa is the most common species. Retrospective studies have shown that Pseudomonas peritonitis is
+    associated with greater frequencies of hospitalization, high rates of catheter removal and permanent
+    hemodialysis transfer (375–377). The use of 2 anti-pseudomonal antibiotics is associated with better outcomes
+    (377). Carbapenems, such as imipenem, meropenem, and doripenem are valid alternatives, especially if the
+    bacterial isolate is resistant to cephalosporin and anti-pseudomonal penicillins. If fluoroquinolone is used
+    as part of the regimen, ciprofloxacin should be used, while moxifloxacin has very little anti-pseudomonal
+    activity. If concomitant catheter infection is present, catheter removal is often needed.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, other, gram, negative, bacteria]
+
+  title: Other Gram-Negative Bacteria
+  text : |
+    We suggest that non-Pseudomonas gram-negative peritonitis be treated with effective antibiotics for at least
+    3 weeks (2C).
+
+    If single gram-negative organisms are isolated, the antibiotic should be chosen according to sensitivity,
+    safety, and convenience. It is important to note that bacteria in biofilm are considerably less sensitive than
+    that indicated by laboratory testing (378), which may account for the high percentage of treatment failures,
+    even though the organism appears to be sensitive to the antibiotic in vitro (379,380). Retrospective studies
+    have shown that gram-negative peritonitis had higher risks of catheter loss and death than gram-positive
+    episodes (379–384). In one study, recent antibiotic therapy was the major risk factor of antibiotic resistance,
+    while ESI, and possibly recent antibiotic therapy, were associated with poor therapeutic response (382).
+    The SPICE organisms (Serratia, Pseudomonas, indole-positive organisms such as Proteus and Providentia,
+    Citrobacter, and Enterobacter) have amp-C beta-lactamases, which inactivate cephalosporins, and have a high
+    risk of relapse. Although single antibiotic therapy is often effective, 1 retrospective study suggested that
+    treatment with 2 antibiotics may reduce the risk of relapse and recurrence (382).
+
+    In recent years, there has been widespread emergence of 2 antibiotic resistance
+    mechanisms, extended-spectrum beta-lactamases (ESBLs) (385,386) and carbapenem-resistant Enterobacteriaceae
+    (CRE) (385,387); the latter are also called Klebsiella pneumoniae carbapenemase (KPC)-producing bacteria when
+    the carbapenem resistance is mediated by beta-lactamases. Extended-spectrum beta-lactamases are resistant to
+    all cephalosporins but usually susceptible to carbapenems. Carbapenem-resistant Enterobacteriaceae/KPC-producing
+    bacteria are usually resistant to all classes of beta-lactams, usually resistant to fluoroquinolones, variably
+    susceptible to aminoglycosides, but usually susceptible to polymyxin and colistin.
+
+    The isolation of a Stenotrophomonas species, while infrequent, requires special attention, as it is sensitive
+    to only a few antimicrobial agents (388,389). Recent treatment with carbapenems, fluoroquinolones, or third- or
+    fourth-generation cephalosporins usually precedes Stenotrophomonas infections. Based on limited observational
+    data, therapy with 2 antibiotics for 3 to 4 weeks is recommended (388,389). If the isolate is sensitive to
+    trimethoprim/sulfamethoxazole, this agent should be included in the regimen. Tigecycline, polymyxin B, and
+    colistin are other possible alternatives.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, Polymicrobial]
+
+  title: Polymicrobial Peritonitis
+  text : |
+    If multiple enteric organisms (multiple gram-negative or mixed gram-negative/gram-positive organisms) are
+    grown from PD effluent, we suggest that surgical evaluation be obtained immediately when there is no prompt
+    clinical response (1C) and that the patient be treated with metronidazole in conjunction with IP vancomycin
+    and either IP aminoglycoside or IP ceftazidime for a minimum period of 3 weeks (2C).
+
+    If multiple gram-positive organisms are grown from PD effluent, we suggest that patients be treated with
+    effective antibiotics for 3 weeks (2C).
+
+    When multiple enteric organisms are grown from the PD effluent, there is a possibility of intra-abdominal
+    pathology. Presentation with hypotension, sepsis, lactic acidosis, or elevated dialysis effluent amylase
+    level should also raise the possibility of abdominal catastrophe (390,391). When a surgical cause of peritonitis
+    is suspected, the antibiotics of choice are metronidazole plus vancomycin, in combination with ceftazidime or an
+    aminoglycoside. Monotherapy with a carbapenem or piperacillin/tazobactam may also be considered. Assessment by
+    a surgeon is needed. Computed tomographic (CT) scan may help to identify the pathology, but a normal CT scan
+    does not eliminate that possibility. If laparotomy is needed, the PD catheter is usually removed and antibiotics
+    are continued via IV route.
+
+    In contrast, polymicrobial peritonitis due to multiple gram-positive organisms often has a favorable prognosis
+    (392,393). Their clinical behavior is similar to peritonitis episodes caused by single gram-positive organisms
+    and the etiology may well be touch contamination. Antibiotic therapy is often effective without catheter
+    removal (392).
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, Culture, Negative]
+
+  title: Culture-Negative Peritonitis
+  text : |
+    We suggest that negative effluent cultures on day 3 warrant a repeat dialysis effluent WBC count with
+    differential (2D).
+
+    If the culture-negative peritonitis is resolving at day 3, we suggest discontinuing aminoglycoside therapy
+    and continuing treatment with gram-positive coverage (e.g. first-generation cephalosporin or vancomycin)
+    for 2 weeks (2C).
+
+    If the culture-negative peritonitis is not resolving at day 3, we suggest special culture techniques be
+    considered for isolation of unusual organisms (2C).
+
+    Recent antibiotic usage and technical problems of culturing the specimen are the major reasons for
+    negative effluent cultures (394–396). If PD effluent yields no growth after 3 days, a repeat WBC count
+    with differential should be obtained. If the repeat cell count indicates that the infection has not resolved,
+    special culture techniques may be considered for the isolation of unusual organisms (e.g. mycobacteria,
+    nocardia, legionella, filamentous fungus, and other fastidious bacteria). This would require close liaison with
+    the microbiology laboratory.
+
+    Many culture-negative peritonitis episodes are probably caused by gram-positive organisms. If the patient
+    improves clinically, initial therapy should be continued (394–396). Duration of therapy should be 2 weeks
+    if the effluent clears promptly. In contrast, if there is suboptimal response after 5 days of empirical
+    antibiotics, catheter removal should be strongly considered.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, fungal]
+
+  title:  Fungal Peritonitis
+  text : |
+    We recommend immediate catheter removal when fungi are identified in PD effluent (1C).
+
+    We suggest that treatment with an appropriate anti-fungal agent be continued for at least 2 weeks after
+    catheter removal (2C).
+
+    Fungal peritonitis is a serious complication with high rates of hospitalization, catheter removal, transfer
+    to hemodialysis, and death (397–400). Initial therapy is traditionally a combination of amphotericin B and
+    flucytosine. However, IP amphotericin causes chemical peritonitis and pain, while IV administration has poor
+    peritoneal bioavailability. In addition, flucytosine is not widely available. If flucytosine is used, regular
+    monitoring of serum concentration is necessary to avoid bone marrow toxicity. Peak serum flucytosine levels,
+    measured 1 – 2 hours after an oral dose, should be 25 – 50 mcg/mL (401,402).
+
+    Other agents of choice include fluconazole, an echinocandin (e.g. caspofungin, micafungin, or anidulafungin),
+    posaconazole, and voriconazole. Although fluconazole is commonly used, the prevalence of azole resistance is
+    increasing (403). Fluconazole only has activity against Candida species and Cryptococcus. Echinocandins have
+    been advocated for the treatment of fungal peritonitis caused by Aspergillus species and non-albicans Candida
+    species, or in patients intolerant to other antifungal therapies (297,298,398). Caspofungin has been used
+    successfully as monotherapy or in combination with amphotericin (297,298). Posaconazole and voriconazole have
+    been successfully used for the treatment of peritonitis caused by filamentous fungi (287,300,301).
+
+    Irrespective of the choice of anti-fungal agent, observational studies suggest that prompt catheter removal
+    probably improves outcome and reduces mortality (300,301,397,398,400,404). Anti-fungal agents should be
+    continued after catheter removal for at least 2 weeks. A recent study suggested that around one-third of
+    patients could return to PD (399).
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, Tuberculous]
+
+  title:  Tuberculous Peritonitis
+  text : |
+    Although classical symptoms of fever, abdominal pain, and cloudy effluent may occur with tuberculous
+    peritonitis, the diagnosis should be considered in any patient with refractory or relapsing peritonitis
+    with negative bacterial cultures. Similar to bacterial peritonitis, most cases of tuberculous peritonitis
+    have PMN in the dialysis effluent at initial presentation, but lymphocytosis in the dialysis effluent usually
+    becomes obvious later. Ziehl-Neelsen stain examination of the PD effluent is often unrevealing, and
+    conventional culture technique (e.g. Löwenstein-Jensen agar) is slow and not sufficiently sensitive.
+    The time to develop a positive culture is considerably decreased in fluid medium (e.g. Septi-Chek, BACTEC;
+    Becton Dickinson, NJ, USA). Overall diagnostic yield could be improved by centrifuging a large volume of
+    effluent (50 to 100 mL), followed by culturing the sediment in both solid and fluid media. Alternatively,
+    mycobacterial DNA PCR can be performed on dialysis effluent, although false-positives are not uncommon (405).
+    Laparoscopy with biopsy of the peritoneum or omentum has also been advocated for rapid diagnosis if the index
+    of suspicion is high (406).
+
+    The treatment protocol should be based on general protocols for treatment of tuberculosis but is often
+    started with 4 drugs, rifampicin, isoniazid, pyrazinamide, and ofloxacin. A previous study showed that
+    rifampicin levels in PD effluent are often low (407). Intraperitoneal rifampicin treatment has been advocated
+    but is not available in many countries. In general, pyrazinamide and ofloxacin could be stopped after 2 months,
+    while rifampicin and isoniazid should be continued for a total of 12 to 18 months (407–413). Pyridoxine
+    (50 to 100 mg/day) should be given to avoid isoniazid-induced neurotoxicity. On the other hand, long-term
+    use of pyridoxine at a higher dose (e.g. 200 mg daily) is in itself associated with neuropathy and should
+    be avoided. Streptomycin, even in reduced doses, may cause ototoxicity after prolonged use and should be
+    avoided. Ethambutol is associated with a high risk of optic neuritis in dialysis patients and must be used
+    with appropriate dosage reduction. Previous reports suggest a dose of 15 mg/kg every 48 hours or thrice weekly
+    for up to 2 months (414). The optimal treatment for drug-resistant tuberculous peritonitis remains unknown.
+
+    Many patients respond to anti-tuberculous therapy without catheter removal (407–413,415). However, it is
+    important to differentiate patients with miliary tuberculosis, whose peritonitis is part of the disseminated
+    disease, from those with isolated tuberculous peritonitis without extraperitoneal infection, because the
+    duration of anti-tuberculous therapy is different.
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, Non-Tuberculous, Mycobacterial]
+
+  title: Non-Tuberculous Mycobacterial Peritonitis
+  text : |
+    Data on peritonitis caused by non-tuberculous mycobacteria are limited but may be increasing (21,416–422).
+    It is not uncommon for non-tuberculous mycobacteria to be misidentified as gram-positive diphtheroids.
+    Over half of the isolates are rapidly growing species, such as M. fortuitum and M. chelonae (420), and
+    often become positive on routine bacteriologic cultures in 3 to 5 days. It has been postulated that extensive
+    use of topical gentamicin ointment for exit-site infection may predispose patients to non-tuberculous
+    mycobacterial infection of the exit site (144). The treatment regimen for non-tuberculous mycobacterial
+    peritonitis is not well established and requires individualized protocols based on susceptibility testing.
+    Catheter removal is usually necessary, and experience with non-removal is limited (420–422). The type and
+    duration of antibiotic therapy are variable, and the optimal treatment regimen is poorly defined and depends
+    on species and drug susceptibilities (416–422).
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+- tags:
+  - [patient, peritonitis, catheter, removal, re-insertion]
+
+  title: Catheter Removal and Re-Insertion
+  text : |
+    We recommend that PD catheters be removed for refractory, relapsing, or fungal peritonitis unless there are
+    clinical contraindications (1C).
+
+    We suggest that it is appropriate to consider return to PD for many patients who have had their catheter
+    removed for refractory, relapsing, or fungal peritonitis (2C).
+
+    We suggest that if re-insertion of a new catheter is attempted after a PD catheter is removed for refractory,
+    relapsing, or fungal peritonitis, it be performed at least 2 weeks after catheter removal and complete
+    resolution of peritoneal symptoms (2D).
+
+    Indications for catheter removal are summarized in Table 8. For refractory peritonitis and fungal peritonitis,
+    simultaneous re-insertion of a new PD catheter is not recommended, and patients should be put on temporary
+    hemodialysis. Observational studies suggest that effective antibiotics should be continued for at least 2 weeks
+    after catheter removal for refractory peritonitis (423,424).
+
+    After severe episodes of peritonitis, around 50% of patients could potentially return to PD (423–425).
+    An ANZDATA Registry study demonstrated that return to PD after catheter removal and temporary hemodialysis
+    for peritonitis was not associated with inferior patient-level clinical outcomes when compared with other
+    patients who either never required hemodialysis transfer for peritonitis or who had permanent hemodialysis
+    transfer for peritonitis (426). Furthermore, subsequent peritonitis-free, technique and patient survival
+    following return to PD were not associated with organism type or duration of time from hemodialysis transfer
+    to PD restart (426). There are few data on the optimal duration between catheter removal for peritonitis and
+    re-insertion of a new catheter. Observational studies suggest a minimum period of 2 to 3 weeks (423–425),
+    although some would recommend later re-insertion in cases of fungal peritonitis (397,398). Re-insertion of a
+    new catheter should be done by laparoscopic or mini-laparotomy approach so that adhesion can be directly
+    visualized. Ultrafiltration problems are common after return to PD (423,424). A small proportion of patients
+    with PD-related peritonitis develop recurrent intra-abdominal collection that requires percutaneous drainage
+    after catheter removal (427). The chance of a successful return to PD is very low in this group of patients,
+    and direct conversion to long-term hemodialysis should be considered (427).
+  source_title: ISPD
+  source_url: http://www.pdiconnect.com/content/36/5/481.full#F1
+  quick_options:
+  - {display: Adjunctive Treatments, reply: Adjunctive Treatments}
+  - {display: Subsequent Management of Peritonitis, reply: Subsequent Management of Peritonitis}
+  - {display: Empiric Antibiotic Selection, reply: Empiric Antibiotic Selection}
+
+
